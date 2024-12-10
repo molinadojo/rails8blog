@@ -1,0 +1,10 @@
+<h3>Añadir comentario</h3>
+<%= form_with(model: [post, Comment.new], local: true) do |form| %>
+  <div>
+    <%= form.label :body, "Comentario" %>
+    <%= form.text_area :body %>
+  </div>
+  <div>
+    <%= form.submit "Comentar" %>
+  </div>
+<% end %>

@@ -1,0 +1,13 @@
+<h1>Publicaciones</h1>
+
+<%= link_to 'Nueva Publicación', new_post_path %>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <h2><%= link_to post.title, post_path(post) %></h2>
+      <p><%= post.body.truncate(100) %></p>
+      <small>Por <%= post.user&.name || "Anónimo" %></small>
+    </li>
+  <% end %>
+</ul>
